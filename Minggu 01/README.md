@@ -24,7 +24,7 @@
 
 ## Step 2: Instalasi Debian
 
-1. Pilih Graphical install.
+1. Pilih Graphical install. <br>
 ![](assets/deb5.png)
 
 2. Pilih bahasa (English).
