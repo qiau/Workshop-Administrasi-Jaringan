@@ -9,7 +9,7 @@
 
 ## Prerequisites
 
-- Virtual box telah terpasang
+- Virtual box telah terpasang 
 - File ISO linux Debian 12 (Bookworm)
 
 ## Step 1: Create Virtual Machine
