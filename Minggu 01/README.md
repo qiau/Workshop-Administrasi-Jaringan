@@ -5,7 +5,7 @@
 - Virtual box telah terpasang
 - File ISO linux Debian 12 (Bookworm)
 
-## Step 1 Create Virtual Machine
+## Step 1: Create Virtual Machine
 
 1. Buka virtual box lalu pilih New.
 ![](assets/deb1.png)
@@ -27,13 +27,13 @@
 1. Pilih Graphical install. <br>
 ![](assets/deb5.png)
 
-2. Pilih bahasa (English).
+2. Pilih bahasa (English). <br>
 ![](assets/deb6.png)
 
 3. Pilih negara asal (Indonesia).
 ![](assets/deb7.png)
 
-4. Atur konfigurasi lokal.
+4. Atur konfigurasi lokal. <br>
 ![](assets/deb8.png)
 
 5. Pilih konfigurasi keyboard.
@@ -51,13 +51,13 @@
 9. Atur nama lengkap (raihan).
 ![](assets/deb13.png)
 
-10. Atur username (raihan).
+10. Atur username (raihan). <br>
 ![](assets/deb14.png)
 
 11. Atur password untuk linux.
 ![](assets/deb15.png)
 
-12. Pilih zona waktu.
+12. Pilih zona waktu. <br>
 ![](assets/deb16.png)
 
 13. Atur partisi secara manual.
@@ -66,7 +66,7 @@
 14. Berikut adalah partisinya.
 ![](assets/deb18.png)
 
-15. Pilih yes.
+15. Pilih yes. <br>
 ![](assets/deb19.png)
 
 16. Pilih extra installation media (opsional).
@@ -78,7 +78,7 @@
 18. Pilih debian archive mirror (kartolo.sby).
 ![](assets/deb22.png)
 
-19. Pilih software.
+19. Pilih software. <br>
 ![](assets/deb23.png)
 
 20. Install grub boot loader (yes).
