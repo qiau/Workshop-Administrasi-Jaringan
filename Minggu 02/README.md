@@ -5,7 +5,7 @@
     Dosen Pengampu	        : Dr. Ferry Astika Saputra S.T., M.Sc
     
 
-**<h1 style="font-family:bahnschrift;">Tugas 2</h1>**
+- # _TUGAS 2_ 
 **<h2 style="font-family:bahnschrift;">1. Standar struktur direktori pada linux</h2>**
     <br><img src="assets/tree.jpg" width="500"><br>
 - ```/root```
