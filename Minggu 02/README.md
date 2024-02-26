@@ -1,9 +1,9 @@
-```copy code 
-Nama             : Muhammad Arief Satria Wibawa
-NRP              : 3122600015
-Kelas            : D4 IT A
-Dosen Pengampu   : Dr. Ferry Astika Saputra S.T., M.Sc
-```
+    Nama		        : Raihan Eka Pramudya
+    NRP		        : 3122600011
+    Kelas		        : 2 D4 Teknik Informatika A
+    Mata Kuliah	        : Workshop Administrasi Jaringan
+    Dosen Pengampu	        : Dr. Ferry Astika Saputra S.T., M.Sc
+    
 
 **<h1 style="font-family:bahnschrift;">Tugas 1</h1>**
 **<h2 style="font-family:bahnschrift;">Standar struktur direktori pada linux</h2>**
