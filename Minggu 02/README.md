@@ -7,7 +7,7 @@
 
 - # _TUGAS 2_ 
 **<h2 style="font-family:bahnschrift;">1. Standar struktur direktori pada linux</h2>**
-    <br><img src="assets/tree.jpg" width="500"><br>
+    <br><img src="assets/tree.jpg" width="900"><br>
 - ```/root```
     Ini merupakan direktori utama dimana semua operasi linux ada di sini. Direktori ini membawahi semua direktori sistem yang ada pada linux.
 - ```/boot```
