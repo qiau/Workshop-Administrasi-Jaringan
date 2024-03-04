@@ -5,22 +5,51 @@
     Dosen Pengampu	        : Dr. Ferry Astika Saputra S.T., M.Sc
     
 
-- # _Ubah DHCP ke Manual_ 
-**<h3 style="font-family:bahnschrift;">1. Menuju ke setting->network lalu klik ikon + seperti pada gambar.</h3>**
+- # _Konfigurasi Mikrotik dengan Winbox untuk Internet_ 
+**<h3 style="font-family:bahnschrift;">1. Menuju IP->Adresses.</h3>**
 <p align="center">
-  <br><img src="assets/dhcp1.jpg"><br>
+  <br><img src="assets/1.png"><br>
 </p> 
 
 #
 
 **<h3 style="font-family:bahnschrift;">2. Ubah konfigurasi address dan DNS seperti pada gambar.</h3>**
 <p align="center">
-  <br><img src="assets/dhcp2.jpg"><br>
+  <br><img src="assets/2.png"><br>
 </p>
 
 #
 
 **<h3 style="font-family:bahnschrift;">3. Tes ping ke DNS google melalui terminal.</h3>**
 <p align="center">
-  <br><img src="assets/dhcp3.jpg"><br>
+  <br><img src="assets/3.png"><br>
+</p>
+
+**<h3 style="font-family:bahnschrift;">3. Tes ping ke DNS google melalui terminal.</h3>**
+<p align="center">
+  <br><img src="assets/4.png"><br>
+</p>
+**<h3 style="font-family:bahnschrift;">3. Tes ping ke DNS google melalui terminal.</h3>**
+<p align="center">
+  <br><img src="assets/5.png"><br>
+</p>
+**<h3 style="font-family:bahnschrift;">3. Tes ping ke DNS google melalui terminal.</h3>**
+<p align="center">
+  <br><img src="assets/6.png"><br>
+</p>
+**<h3 style="font-family:bahnschrift;">3. Tes ping ke DNS google melalui terminal.</h3>**
+<p align="center">
+  <br><img src="assets/7.png"><br>
+</p>
+**<h3 style="font-family:bahnschrift;">3. Tes ping ke DNS google melalui terminal.</h3>**
+<p align="center">
+  <br><img src="assets/8.png"><br>
+</p>
+**<h3 style="font-family:bahnschrift;">3. Tes ping ke DNS google melalui terminal.</h3>**
+<p align="center">
+  <br><img src="assets/9.png"><br>
+</p>
+**<h3 style="font-family:bahnschrift;">3. Tes ping ke DNS google melalui terminal.</h3>**
+<p align="center">
+  <br><img src="assets/10.png"><br>
 </p>
