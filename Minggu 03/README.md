@@ -33,28 +33,35 @@
   <br><img src="assets/2.png"><br>
 </p>
 
-**<h3 style="font-family:bahnschrift;">4. Tambahkan .</h3>**
-<p align="center">
-  <br><img src="assets/5.png"><br>
-</p>
-**<h3 style="font-family:bahnschrift;">3. Tes ping ke DNS google melalui terminal.</h3>**
-<p align="center">
-  <br><img src="assets/6.png"><br>
-</p>
-**<h3 style="font-family:bahnschrift;">3. Tes ping ke DNS google melalui terminal.</h3>**
-<p align="center">
-  <br><img src="assets/7.png"><br>
-</p>
-**<h3 style="font-family:bahnschrift;">3. Tes ping ke DNS google melalui terminal.</h3>**
-<p align="center">
-  <br><img src="assets/8.png"><br>
-</p>
-**<h3 style="font-family:bahnschrift;">3. Tes ping ke DNS google melalui terminal.</h3>**
-<p align="center">
-  <br><img src="assets/9.png"><br>
-</p>
-**<h3 style="font-family:bahnschrift;">3. Tes ping ke DNS google melalui terminal.</h3>**
-<p align="center">
-  <br><img src="assets/10.png"><br>
-</p>
-  <br><img src="assets/11.png"><br>
+**<h3 style="font-family:bahnschrift;">4. Menambahkan Bridge & Ports</h3>**
+
+<img src="assets/bukabridge.jpg"> <br>
+
+- <div class ="isi" style="font-family:bahnschrift;">  Tambahkan interface
+
+  <img src="assets/bridge1.png"> <br>
+  ><div class ="isi" style="font-family:bahnschrift;">  Isi Name dengan bridge1.
+- <div class ="isi" style="font-family:bahnschrift;">Tambahkan Ports (untuk tiap kelompok)
+  <img src="assets/ether.png"> <br>
+  <img src="assets/ether2.png"> <br>
+
+#
+
+**<h3 style="font-family:bahnschrift;">5. Setup DHCP.</h3>**
+- <div class ="isi" style="font-family:bahnschrift;"> Pilih bridge1<br>
+  <img src="assets/7.png"> <br>
+- <div class ="isi" style="font-family:bahnschrift;"> Isi dengan 192.168.7.0/24<br>
+  <img src="assets/8.png"> <br>
+- <div class ="isi" style="font-family:bahnschrift;"> Isi gateway dengan 192.168.7.1<br>
+  <img src="assets/9.png"> <br>
+- <div class ="isi" style="font-family:bahnschrift;"> Isi DHCP relay dengan 192.168.88.254<br>
+  <img src="assets/10.png"> <br>
+- <div class ="isi" style="font-family:bahnschrift;"> Isi rentang 100 hingga 200<br>
+  <img src="assets/11.png"> <br>
+
+# 
+
+**<h3 style="font-family:bahnschrift;">6. Setup firewall.</h3>**
+- <div class ="isi" style="font-family:bahnschrift;"> Ubah src address dengan 192.168.7.0/24<br>
+- <div class ="isi" style="font-family:bahnschrift;"> Ubah dst address dengan 0.0.0.0/0<br>
+- <div class ="isi" style="font-family:bahnschrift;"> Ubah action menjadi (masquerade)<br>
