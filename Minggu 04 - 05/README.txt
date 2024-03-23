@@ -5,63 +5,98 @@
     Dosen Pengampu	        : Dr. Ferry Astika Saputra S.T., M.Sc
     
 
-- # _Konfigurasi Mikrotik dengan Winbox untuk Internet_ 
-**<h3 style="font-family:bahnschrift;">1. Menuju IP->Adresses lalu tambahkan pada address list.</h3>**
-<p align="center">
-  <br><img src="assets/addAdrress.png"><br>
-</p> 
+- # _INSTALASI DEBIAN 12 VIRTUAL BOX_
 
-- <div class ="isi" style="font-family:bahnschrift;"> Isi address untuk router sesuai nomor kelompok<br>
-  <img src="assets/4.png"> <br>
+## Prerequisites
 
-  ><div class ="isi" style="font-family:bahnschrift;">  Kelompok 7 maka address kita isi dengan 192.168.88.7/24, network (192.168.88.0), dan interface ether1.
-  
-- <div class ="isi" style="font-family:bahnschrift;"> Isi IP address untuk PC kelompok 7<br>
-  <img src="assets/3.png"> <br>
+- Virtual box telah terpasang 
+- File ISO linux Debian 12 (Bookworm)
 
-  ><div class ="isi" style="font-family:bahnschrift;">  Kelompok 7 maka address kita isi dengan 192.168.7.1/24, network (192.168.7.0), dan interface bridge1.
-#
-**<h3 style="font-family:bahnschrift;">2. Mengisi Route pada Route List.</h3>**
-<p align="center">
-  <br><img src="assets/1.png"><br>
-</p>
+## Step 1: Create Virtual Machine
 
-#
+1. Buka virtual box lalu pilih New.
+![](assets/deb1.png)
 
-**<h3 style="font-family:bahnschrift;">3. Set route dengan Gateway 192.168.88.254</h3>**
-<p align="center">
-  <br><img src="assets/2.png"><br>
-</p>
+2. Beri nama sesuai keinginan, pilih direktori penyimpanan linux, dan pilih iso file yang telah diunduh. Jangan lupa ceklis juga pada (skip unattended instalation). <br>
+![](assets/deb02.png)
 
-**<h3 style="font-family:bahnschrift;">4. Menambahkan Bridge & Ports</h3>**
+3. Sesuaikan jumlah memory ram dan cpu yang ingin dipakai.
+![](assets/deb2.png)
 
-<img src="assets/bukabridge.jpg"> <br>
+4. Sesuaikan jumlah penyimpanan yang ingin dipakai.
+![](assets/deb3.png)
 
-- <div class ="isi" style="font-family:bahnschrift;">  Tambahkan interface
+5. Setelah selesai klik Finish.
+![](assets/deb4.png)
 
-  <img src="assets/bridge1.png"> <br>
-  ><div class ="isi" style="font-family:bahnschrift;">  Isi Name dengan bridge1.
-- <div class ="isi" style="font-family:bahnschrift;">Tambahkan Ports (untuk tiap kelompok)
-  <img src="assets/ether.png"> <br>
-  <img src="assets/ether2.png"> <br>
+## Step 2: Instalasi Debian
 
-#
+1. Pilih Graphical install. <br>
+![](assets/deb5.png)
 
-**<h3 style="font-family:bahnschrift;">5. Setup DHCP.</h3>**
-- <div class ="isi" style="font-family:bahnschrift;"> Pilih bridge1<br>
-  <img src="assets/7.png"> <br>
-- <div class ="isi" style="font-family:bahnschrift;"> Isi dengan 192.168.7.0/24<br>
-  <img src="assets/8.png"> <br>
-- <div class ="isi" style="font-family:bahnschrift;"> Isi gateway dengan 192.168.7.1<br>
-  <img src="assets/9.png"> <br>
-- <div class ="isi" style="font-family:bahnschrift;"> Isi DHCP relay dengan 192.168.88.254<br>
-  <img src="assets/10.png"> <br>
-- <div class ="isi" style="font-family:bahnschrift;"> Isi rentang 100 hingga 200<br>
-  <img src="assets/11.png"> <br>
+2. Pilih bahasa (English). <br>
+![](assets/deb6.png)
 
-# 
+3. Pilih negara asal (Indonesia).
+![](assets/deb7.png)
 
-**<h3 style="font-family:bahnschrift;">6. Setup firewall.</h3>**
-- <div class ="isi" style="font-family:bahnschrift;"> Ubah src address dengan 192.168.7.0/24<br>
-- <div class ="isi" style="font-family:bahnschrift;"> Ubah dst address dengan 0.0.0.0/0<br>
-- <div class ="isi" style="font-family:bahnschrift;"> Ubah action menjadi (masquerade)<br>
+4. Atur konfigurasi lokal. <br>
+![](assets/deb8.png)
+
+5. Pilih konfigurasi keyboard.
+![](assets/deb9.png)
+
+6. Atur hostname (sysadmin-3122600011).
+![](assets/deb10.png)
+
+7. Atur domain network (opsional).
+![](assets/deb11.png)
+
+8. Atur password untuk root.
+![](assets/deb12.png)
+
+9. Atur nama lengkap (raihan).
+![](assets/deb13.png)
+
+10. Atur username (raihan). <br>
+![](assets/deb14.png)
+
+11. Atur password untuk linux.
+![](assets/deb15.png)
+
+12. Pilih zona waktu. <br>
+![](assets/deb16.png)
+
+13. Atur partisi secara manual.
+![](assets/deb17.png)
+
+14. Berikut adalah partisinya.
+![](assets/deb18.png)
+
+15. Pilih yes. <br>
+![](assets/deb19.png)
+
+16. Pilih extra installation media (opsional).
+![](assets/deb20.png)
+
+17. Pilih negara paket manager (Indonesia).
+![](assets/deb21.png)
+
+18. Pilih debian archive mirror (kartolo.sby).
+![](assets/deb22.png)
+
+19. Pilih software. <br>
+![](assets/deb23.png)
+
+20. Install grub boot loader (yes).
+![](assets/deb24.png)
+
+21. Instalasi BERHASIL!, pilih Continue.
+![](assets/deb25.png)
+
+## Step 3: Konfigurasi Awal
+
+1. Selesaikan setup awal debian.
+2. Setup selesai dan siap untuk digunakan. 
+![](assets/deb26.png)
+
