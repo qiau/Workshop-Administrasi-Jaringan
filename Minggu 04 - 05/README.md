@@ -5,9 +5,9 @@
     Dosen Pengampu	        : Dr. Ferry Astika Saputra S.T., M.Sc
     
 
-- # _INSTALASI DEBIAN 12 VIRTUAL BOX_
+- # _CARA KERJA INTERNET_
 
-## Prerequisites
+## PENGERTIAN
 
 - Virtual box telah terpasang 
 - File ISO linux Debian 12 (Bookworm)
