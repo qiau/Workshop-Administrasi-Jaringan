@@ -7,96 +7,44 @@
 
 - # _CARA KERJA INTERNET_
 
-## PENGERTIAN
+## Pengertian
+Internet adalah jaringan komputer yang saling tekoneksi di seluruh dunia yang menggunaka penghubung kabel, bisa menggunakan optic fiber cable, atau copper cable, ataupun gelombang radio. Langkah-langkahnya yakni **Pengiriman Data**, **Pemrosesan Permintaan**, **Pengiriman Respon**, **Representasi hasil**. 
+  
+- Secara teknis, internet terdapat 2 komponen, yakni routing system dan naming system
 
-- Virtual box telah terpasang 
-- File ISO linux Debian 12 (Bookworm)
 
-## Step 1: Create Virtual Machine
+## Routing System
+>Merupakan infrastruktur yang digunakan untuk menghubungkan, me-route, dan mengelola traffic jaringan yang ada di internet
+  ### Routing
+  Routing adalah proses pengalihan data dari satu titik ke titik lain dalam jaringan. Ini dilakukan oleh perangkat keras khusus yang disebut router. Router menggunakan tabel routing untuk menentukan jalur terbaik untuk mengirim data berdasarkan alamat tujuan.
+  ### Peering Connection
+  Peering adalah pertukaran langsung lalu lintas data antara penyedia layanan internet (ISP) atau organisasi yang mengoperasikan jaringan. Ini memungkinkan pertukaran lalu lintas data secara langsung tanpa melalui jalur pihak ketiga, yang dapat meningkatkan kecepatan dan efisiensi.
+  ### Edge Provider Routing Policy
+  Kebijakan routing penyedia tepi (edge provider) mengatur bagaimana data diarahkan dari pelanggan mereka ke Internet publik. Ini termasuk keputusan tentang bagaimana dan ke mana mengalirkan lalu lintas data yang masuk dan keluar dari jaringan mereka.
+  ### Transit Provider Routing Policy
+  Transit provider mengatur kebijakan routing untuk menyediakan layanan transit bagi penyedia konten dan pelanggan mereka. Ini termasuk menentukan rute terbaik untuk meneruskan lalu lintas data antara berbagai jaringan.
 
-1. Buka virtual box lalu pilih New.
-![](assets/deb1.png)
 
-2. Beri nama sesuai keinginan, pilih direktori penyimpanan linux, dan pilih iso file yang telah diunduh. Jangan lupa ceklis juga pada (skip unattended instalation). <br>
-![](assets/deb02.png)
+## Naming System
+>Atau yang dikenal dengan DNS (Domain Name System) ialah sistem yang memungkinkan user untuk menemukan alamat server melalui nama domain tertentu, yang nantinya akan diarahkan ke server tempat informasi berada, seperti www.google.com
 
-3. Sesuaikan jumlah memory ram dan cpu yang ingin dipakai.
-![](assets/deb2.png)
+  Komponen utama pada DNS ialah : 
 
-4. Sesuaikan jumlah penyimpanan yang ingin dipakai.
-![](assets/deb3.png)
+  ### Domain
+  Domain adalah bagian dari alamat web yang digunakan untuk mengidentifikasi dan mengelompokkan situs web atau sumber daya internet lainnya. Contohnya adalah "google.com" atau "example.org".
+  ### Name Server
+  Name Server adalah server yang bertanggung jawab untuk menerjemahkan nama domain menjadi alamat IP. Setiap domain memiliki setidaknya satu name server yang terkait dengannya.
+  ### Root Server:
+  Root Server adalah server tertinggi dalam hierarki DNS. Mereka bertanggung jawab untuk menangani permintaan DNS yang tidak dapat dipenuhi oleh server di tingkat lebih rendah dalam hierarki, dan mereka menyimpan database yang berisi informasi tentang semua domain top-level (TLD) seperti ".com", ".org", dan lainnya.
 
-5. Setelah selesai klik Finish.
-![](assets/deb4.png)
+- # _PENDAPAT SAYA_
 
-## Step 2: Instalasi Debian
+Internet seperti kanvas yang luas dan kompleks, di mana inovasi dan kolaborasi terjadi berkelanjutan. Teknologi yang membentuk internet tidak berdiri sendiri setiap komponen, dari infrastruktur jaringan hingga protokol komunikasi dan aplikasi, saling terkait dan bergantung satu sama lain untuk menciptakan ekosistem digital yang dinamis dan adaptif.
 
-1. Pilih Graphical install. <br>
-![](assets/deb5.png)
+Infrastruktur fisik internet, seperti server, kabel fiber optik, dan satelit, membentuk tulang punggung yang memungkinkan data bergerak dengan kecepatan cahaya di seluruh dunia. Di atas infrastruktur ini, protokol komunikasi seperti TCP/IP (Transmission Control Protocol/Internet Protocol) bertindak sebagai aturan dasar yang mengatur pertukaran informasi. Tanpa standarisasi protokol ini, interkoneksi antara jaringan yang berbeda inti dari internet tidak mungkin terjadi.
 
-2. Pilih bahasa (English). <br>
-![](assets/deb6.png)
+Kolaborasi adalah kunci dalam ekosistem teknologi ini. Proyek open source, misalnya, memungkinkan pengembang dari seluruh dunia untuk berkontribusi pada pembuatan dan peningkatan perangkat lunak, memastikan bahwa teknologi tidak hanya maju tetapi juga dapat diakses oleh semua orang. Inisiatif seperti ini menunjukkan bagaimana komunitas global dapat bekerja sama untuk menangani tantangan bersama dan memajukan teknologi untuk kebaikan bersama.
 
-3. Pilih negara asal (Indonesia).
-![](assets/deb7.png)
+Namun, dengan semua kemajuan ini, tantangan tetap ada. Keamanan siber, privasi, dan isu-isu etis lainnya menuntut perhatian dan solusi yang terus-menerus. Seiring dengan pertumbuhan dan evolusi internet, upaya untuk menjaga ekosistem ini aman, terbuka, dan inklusif juga harus berkembang.
 
-4. Atur konfigurasi lokal. <br>
-![](assets/deb8.png)
-
-5. Pilih konfigurasi keyboard.
-![](assets/deb9.png)
-
-6. Atur hostname (sysadmin-3122600011).
-![](assets/deb10.png)
-
-7. Atur domain network (opsional).
-![](assets/deb11.png)
-
-8. Atur password untuk root.
-![](assets/deb12.png)
-
-9. Atur nama lengkap (raihan).
-![](assets/deb13.png)
-
-10. Atur username (raihan). <br>
-![](assets/deb14.png)
-
-11. Atur password untuk linux.
-![](assets/deb15.png)
-
-12. Pilih zona waktu. <br>
-![](assets/deb16.png)
-
-13. Atur partisi secara manual.
-![](assets/deb17.png)
-
-14. Berikut adalah partisinya.
-![](assets/deb18.png)
-
-15. Pilih yes. <br>
-![](assets/deb19.png)
-
-16. Pilih extra installation media (opsional).
-![](assets/deb20.png)
-
-17. Pilih negara paket manager (Indonesia).
-![](assets/deb21.png)
-
-18. Pilih debian archive mirror (kartolo.sby).
-![](assets/deb22.png)
-
-19. Pilih software. <br>
-![](assets/deb23.png)
-
-20. Install grub boot loader (yes).
-![](assets/deb24.png)
-
-21. Instalasi BERHASIL!, pilih Continue.
-![](assets/deb25.png)
-
-## Step 3: Konfigurasi Awal
-
-1. Selesaikan setup awal debian.
-2. Setup selesai dan siap untuk digunakan. 
-![](assets/deb26.png)
-
+Secara keseluruhan, internet adalah suatu ekosistem yang saling terhubung dan terus berkembang, di mana kolaborasi dan inovasi bersama membentuk fondasi untuk kemajuan. Memahami dan berpartisipasi dalam dinamika ini tidak hanya penting bagi para profesional teknologi tetapi juga bagi masyarakat luas, karena kita semua adalah bagian dari jaringan global ini.
