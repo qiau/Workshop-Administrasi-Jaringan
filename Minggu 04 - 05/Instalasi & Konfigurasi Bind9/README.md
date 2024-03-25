@@ -5,98 +5,67 @@
     Dosen Pengampu	        : Dr. Ferry Astika Saputra S.T., M.Sc
     
 
-- # _CARA KERJA INTERNET_
+- # _INSTALL & KONFIGURASI BIND9_
 
-## PENGERTIAN
+## Install bind9, bind9-doc dan bind9-dnsutils 
 
-- Virtual box telah terpasang 
-- File ISO linux Debian 12 (Bookworm)
+  - Memasukkan perintah `sudo apt install bind9` dan  `sudo apt install bind9-doc` 
+    >Perintah ini digunakan untuk melakukan instalasi bind9
 
-## Step 1: Create Virtual Machine
+    <img width="100%" src="assets/01, install bind9.png">
+  
+  - Memasukkan perintah `sudo apt install bind9-dnsutils`
+    >Perintah ini digunakan untuk tools konfigurasi
+  
+    <img width="100%" src="assets/02, install bind9-doc, dnsutils.png">
+    
+  - Masukkan perintah `cd /etc/bind` untuk masuk ke direktori ini, lalu ketik perintah  `sudo nano named.conf`
+    >Perintah ini digunakan untuk mengedit isi dari `named.conf`. Lalu, edit isinya seperti berikut : 
+  
+    <img width="100%" src="assets/na.png">
 
-1. Buka virtual box lalu pilih New.
-![](assets/deb1.png)
+## Konfigurasi
 
-2. Beri nama sesuai keinginan, pilih direktori penyimpanan linux, dan pilih iso file yang telah diunduh. Jangan lupa ceklis juga pada (skip unattended instalation). <br>
-![](assets/deb02.png)
+  - Masukkan perintah `sudo nano named.conf.options`
+    > Perintah ini digunakan untuk mengedit isi dari `named.conf.options`, dan edit isinya menjadi seperti berikut : 
 
-3. Sesuaikan jumlah memory ram dan cpu yang ingin dipakai.
-![](assets/deb2.png)
+    <img width="100%" src="assets/step4, edit named.conf.options.png">
 
-4. Sesuaikan jumlah penyimpanan yang ingin dipakai.
-![](assets/deb3.png)
+  - Masukkan perintah `sudo nano named.conf.local`
+    >Perintah ini digunakan untuk mengedit isi dari `named.conf.local`, dan edit isinya menjadi seperti berikut :
 
-5. Setelah selesai klik Finish.
-![](assets/deb4.png)
+    <img src="assets/step xx. locale.png">
 
-## Step 2: Instalasi Debian
+  - Masukkan perintah `cd /var/lib/bind` untuk masuk ke direktori ini, lalu ketik perintah `sudo touch db.kelompok7.local` untuk membuat file kosong yang bernama `db.kelompok7.local`.
 
-1. Pilih Graphical install. <br>
-![](assets/deb5.png)
+  - Masukkan  perintah `sudo nano db.kelompok7.local` 
+    >Perintah ini digunakan untuk mengedit isi dari `db.kelompok7.local`, dan edit sehingga menjadi seperti berikut :
+    
+    <img width="100%" src="assets/step5, edit db.kel7.local.png">
 
-2. Pilih bahasa (English). <br>
-![](assets/deb6.png)
+  - Masukkan perintah `sudo touch db.kelompok7.local.inv` yang digunakan untuk membuat file kosong yang bernama `db.kelompok7.local.inv`.
+  
+  - Masukkan perintah `sudo nano db.kelompok7.local.inv`
+    >Perintah ini digunakan untuk mengedit isi dari file `db.kelompok7.local.inv` dan edit isinya menjadi seperti berikut : 
 
-3. Pilih negara asal (Indonesia).
-![](assets/deb7.png)
+    <img width="100%" src="assets/step6, edit db.kel7.local.env.png">
 
-4. Atur konfigurasi lokal. <br>
-![](assets/deb8.png)
+  - Masukkan perintah `cd` untuk keluar dari direktori `/var/lib/bind` dan masukkan perintah `sudo nano /etc/resolv.conf` untuk mengedit isinya, hingga seperti berikut
+    
+    <img width="100%" src="assets/step7, edit reolv.conf.png">
 
-5. Pilih konfigurasi keyboard.
-![](assets/deb9.png)
+  - Masukkan perintah `named-checkzone kelompok7.local db.kelompok7.local` untuk mengecek domainnya, dan masukkan perintah`named-checkzone 136.168.192.inaddr-arpa` untuk mengecek domain inversnya.
+  
+    <img width="100%" src="assets/step8 9, pengecekan domain.png">
 
-6. Atur hostname (sysadmin-3122600011).
-![](assets/deb10.png)
+  - Masukkan perintah `sudo systemctl restart named` untuk melakukan restart pada domain named, kemudian lakukan tes dengan mengetikkan perintah `sudo systemctl status named`
+    <img width="100%" src="assets/step9, pengecekan status.png">
 
-7. Atur domain network (opsional).
-![](assets/deb11.png)
+  - Masukkan perintah `sudo dig kelompok7.local` untuk domain yang dibuat per-kelompok dan `sudo dig 192.168.137.18`
+    >Perintah ini digunakan untuk melakukan pengecekan informasi lebih lanjut pada domain
 
-8. Atur password untuk root.
-![](assets/deb12.png)
+    <img width="100%" src="assets/step10, pengecekan dig.png">
 
-9. Atur nama lengkap (raihan).
-![](assets/deb13.png)
-
-10. Atur username (raihan). <br>
-![](assets/deb14.png)
-
-11. Atur password untuk linux.
-![](assets/deb15.png)
-
-12. Pilih zona waktu. <br>
-![](assets/deb16.png)
-
-13. Atur partisi secara manual.
-![](assets/deb17.png)
-
-14. Berikut adalah partisinya.
-![](assets/deb18.png)
-
-15. Pilih yes. <br>
-![](assets/deb19.png)
-
-16. Pilih extra installation media (opsional).
-![](assets/deb20.png)
-
-17. Pilih negara paket manager (Indonesia).
-![](assets/deb21.png)
-
-18. Pilih debian archive mirror (kartolo.sby).
-![](assets/deb22.png)
-
-19. Pilih software. <br>
-![](assets/deb23.png)
-
-20. Install grub boot loader (yes).
-![](assets/deb24.png)
-
-21. Instalasi BERHASIL!, pilih Continue.
-![](assets/deb25.png)
-
-## Step 3: Konfigurasi Awal
-
-1. Selesaikan setup awal debian.
-2. Setup selesai dan siap untuk digunakan. 
-![](assets/deb26.png)
-
+  - Masukkan perintah `nslookup ns` untuk melakukan query DNS dan melihat detail dari ns dan `nslookup -q=MX` yang digunakan untuk melihat detail domain mailnya
+    
+    <img width="100%" src="assets/step11, pengecekan nslookup MX.png">
