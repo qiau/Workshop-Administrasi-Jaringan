@@ -65,3 +65,4 @@
   - Masukkan perintah `nslookup ns` untuk melakukan query DNS dan melihat detail dari ns dan `nslookup -q=MX` yang digunakan untuk melihat detail domain mailnya
     
     <img width="100%" src="assets/12.png">
+
