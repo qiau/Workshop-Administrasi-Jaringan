@@ -76,6 +76,9 @@
    vi /etc/apache2/sites-enabled/000-default.conf
     # line 11 : change to webmaster's email
     ServerAdmin webmaster@kelompok11.com
+   ```
+
+   ```bash
     systemctl reload apache2
    ```
 
