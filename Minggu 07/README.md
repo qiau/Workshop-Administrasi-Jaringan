@@ -25,6 +25,7 @@
    ```bash
    sudo timedatectl set-ntp true
    ```
+   ![Timedatectl](assets/ntp1.png)
 5. Menyunting ﬁle timesyncd.conf untuk mengarah ke NTP server terdekat untuk mendapatkan waktu
    delay terpendek. Biasanya setiap organisasi atau negara mempunyai NTP Server sendiri
    ```bash
@@ -35,11 +36,13 @@
    [Time]
    NTP=0.id.pool.ntp.org
    ```
+   ![Timedatectl](assets/ntp2.png)
 6. Restart layanan sinkronisasi waktu dan pastikan layanan berjalan dengan benar
    ```bash
    sudo systemctl restart systemd-timesyncd
    sudo systemctl status systemd-timesyncd
    ```
+   ![Timedatectl](assets/ntp3.png)
 7. Lakukan pengecekan kesesuaian tanggal system dengan perintah
    ```bash
    timedatectl
@@ -52,6 +55,7 @@
    ```bash
    sudo apt -y install apache2
    ```
+   ![Timedatectl](assets/apache1.png)
 2. Mengkonﬁgurasi Apache2
 
    ```bash
@@ -362,7 +366,7 @@
 
 Akan terlihat hasilnyaseperti dibawah, dengan status Server (LISTEN) : MariaDB(MySQL), IMAP, POP3, DNS(domain), IMAPS, POP3S, SSH, Postﬁx (SMTP)
 
-![final cek](assets/final-cek.png)
+![final cek](assets/dovecot1.png)
 
 Melakukan Cek terhadap Layanan Posﬁx
 
@@ -370,4 +374,4 @@ Melakukan Cek terhadap Layanan Posﬁx
 telnet mail.kelompok7.local 25
 ```
 
-![mail cek](assets/telnet.png)
+![mail cek](assets/mail.png)
