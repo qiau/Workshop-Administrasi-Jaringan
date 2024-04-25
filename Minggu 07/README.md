@@ -44,7 +44,7 @@
    ```bash
    timedatectl
    ```
-   ![Timedatectl](assets/timedatectl.png)
+   ![Timedatectl](assets/coba3.png)
 
 ## Apache 2 + PHP-FM
 
@@ -84,7 +84,7 @@
 
 3. Melakukan test ke web browser
 
-   ![Test apache](assets/tes-apache.jpeg)
+   ![Test apache](assets/coba1.png)
 
 4. Install PHP 8.2
 
@@ -164,7 +164,7 @@
    ```
 8. Lalu lakukan test di browser
 
-   ![Test php](assets/tes-php.jpeg)
+   ![Test php](assets/coba2.png)
 
 ## Database System : MariaDB
 
