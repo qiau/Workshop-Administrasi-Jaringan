@@ -69,13 +69,13 @@
    ```bash
    vi /etc/apache2/apache2.conf
     # line 70 : add to specify server name
-    ServerName www. kelompok11.com
+    ServerName www.kelompok7.com
    ```
 
    ```bash
    vi /etc/apache2/sites-enabled/000-default.conf
     # line 11 : change to webmaster's email
-    ServerAdmin webmaster@kelompok11.com
+    ServerAdmin webmaster@kelompok7.com
    ```
 
    ```bash
@@ -225,9 +225,9 @@
     # line 82 : uncomment
     mail_owner = postﬁx
     # line 98 : uncomment and specify hostname
-    myhostname = mail.kelompok11.local
+    myhostname = mail.kelompok7.local
     # line 106 : uncomment and specify domainname
-    mydomain = kelompok11.local
+    mydomain = kelompok7.local
     # line 127 : uncomment
     myorigin = $mydomain
     # line 141 : uncomment
@@ -367,7 +367,7 @@ Akan terlihat hasilnyaseperti dibawah, dengan status Server (LISTEN) : MariaDB(M
 Melakukan Cek terhadap Layanan Posﬁx
 
 ```bash
-telnet mail.kelompok11.local 25
+telnet mail.kelompok7.local 25
 ```
 
 ![mail cek](assets/telnet.png)
