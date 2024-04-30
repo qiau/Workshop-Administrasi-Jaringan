@@ -5,10 +5,11 @@
     Dosen Pengampu	        : Dr. Ferry Astika Saputra S.T., M.Sc
     
 
-- # _PENGIRIMAN MAIL ANTAR KELOMPOK_
+- # _CHAT ANTAR KELOMPOK_
 
-## Melakukan Pengiriman Email
+## MENGGUNAKAN TELNET
 
+- Melakukan pengiriman pesan
   ketik `telnet mail.kelompok4.local 25` lalu masukkan sintaks berikut:
   - `HELO` untuk memulai sesi Telnet dengan server
   - `MAIL FROM:` untuk mendefinisikan alamat email pengirim
@@ -18,7 +19,7 @@
   ![kirim email](assets/kirim%20email.png)
   >Jika muncul output tersebut, maka email berhasil dikirim ke alamat tujuan
 
-- Melakukan cek email yang diterima
+- Pengecekan pesan yang masuk
   ketik `telnet mail.kelompok4.local 110` lalu masukkan sintaks berikut:
   - `user` untuk memasukkan username dari user
   - `pass:` untuk memasukkan password dari user
@@ -27,7 +28,9 @@
   
   ![terima email](assets/accept%20email.png)
   
-- Melakukan pengiriman email menggunakan evolution
+## MENGGUNAKAN DEBIAN EVOLUTION
+
+- Melakukan pengiriman pesan
   - Masukkan email pengirim
   - Masukkan email pengirim
   - Masukkan pesan yang akan dikirim
@@ -37,3 +40,5 @@
   Jika berhasil, maka akan muncul notifikasi berikut: 
 
   ![mail success](assets/evol%20success.png)
+  
+## MENGGUNAKAN akak
