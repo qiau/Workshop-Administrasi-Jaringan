@@ -7,7 +7,7 @@
 
 - # _CHAT ANTAR KELOMPOK_
 
-## MENGGUNAKAN TELNET
+## - MENGGUNAKAN TELNET
 
 - Melakukan pengiriman pesan
   ketik `telnet mail.kelompok4.local 25` lalu masukkan sintaks berikut:
@@ -28,7 +28,7 @@
   
   ![terima email](assets/accept%20email.png)
   
-## MENGGUNAKAN DEBIAN EVOLUTION
+## - MENGGUNAKAN DEBIAN EVOLUTION
 
 - Melakukan pengiriman pesan
   - Masukkan email pengirim
@@ -37,8 +37,8 @@
   
   ![mail send](assets/evol%20send%20email.png)
 
-  Jika berhasil, maka akan muncul notifikasi berikut: 
+  Jika berhasil, maka akan muncul seperti gambar berikut: 
 
   ![mail success](assets/evol%20success.png)
   
-## MENGGUNAKAN akak
+## - MENGGUNAKAN akak
