@@ -42,3 +42,63 @@
   ![mail success](assets/evol%20success.png)
   
 ## - MENGGUNAKAN ROUNDCUBE
+
+1. Install roundcube dengan `suto apt install roundcube`.
+
+![](assets/rc1.png)
+
+![](assets/rc2.png)
+
+![](assets/rc3.png)
+
+2. Lalu kita buat MariaDB database dan user untuk roundcubenya.
+
+![](assets/rc4.png)
+
+3. Lalu konfigurasi config.inc.php di roundcube.
+
+![](assets/rc5.png)
+
+4. Konfigurasi apache.conf.
+
+![](assets/rc6.png)
+
+5. Konfigurasi 000-default.conf.
+
+![](assets/rc7.png)
+
+6. Lalu rekonfigurasi dengan `sudo dpkg-reconfigure roundcube-core`.
+
+![](assets/rc8.png)
+
+![](assets/rc9.png)
+
+![](assets/rc10.png)
+
+![](assets/rc11.png)
+
+![](assets/rc12.png)
+
+![](assets/rc13.png)
+
+![](assets/rc14.png)
+
+![](assets/rc15.png)
+
+![](assets/rc16.png)
+
+![](assets/rc17.png)
+
+![](assets/rc18.png)
+
+![](assets/rc19.png)
+
+![](assets/rc20.png)
+
+![](assets/mail-58.png)
+
+![](assets/mail-59.png)
+
+7. Roundcube berhasil terkonfigurasi. Navigasi ke browser dan buka mail.kelompok1.local. Di sini saya login dengan user debian saya.
+
+![](assets/mail-60.png)
