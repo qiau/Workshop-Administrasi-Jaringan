@@ -43,7 +43,7 @@
   
 ## - MENGGUNAKAN ROUNDCUBE
 
-1. Install roundcube dengan `suto apt install roundcube`.
+1. Install roundcube dengan `sudo apt install roundcube`.
 
 ![](assets/rc1.png)
 
@@ -94,11 +94,3 @@
 ![](assets/rc19.png)
 
 ![](assets/rc20.png)
-
-![](assets/mail-58.png)
-
-![](assets/mail-59.png)
-
-7. Roundcube berhasil terkonfigurasi. Navigasi ke browser dan buka mail.kelompok1.local. Di sini saya login dengan user debian saya.
-
-![](assets/mail-60.png)
