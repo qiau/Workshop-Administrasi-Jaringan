@@ -43,15 +43,17 @@
   
 ## - MENGGUNAKAN ROUNDCUBE
 
-1. Install roundcube dengan `sudo apt install roundcube`.
-
+1. Lakukan instalasi roundcube dengan perintah
+   ```bash
+   sudo apt install roundcube
+   ```
 ![](assets/rc1.png)
 
 ![](assets/rc2.png)
 
 ![](assets/rc3.png)
 
-2. Lalu kita buat MariaDB database dan user untuk roundcubenya.
+2. Lalu kita buat MariaDB database dan user untuk roundcubenya
 
 ![](assets/rc4.png)
 
@@ -67,8 +69,10 @@
 
 ![](assets/rc7.png)
 
-6. Lalu rekonfigurasi dengan `sudo dpkg-reconfigure roundcube-core`.
-
+6. Lalu kita rekonfigurasi dengan perintah
+   ```bash
+   sudo dpkg-reconfigure roundcube-core
+   ```
 ![](assets/rc8.png)
 
 ![](assets/rc9.png)
