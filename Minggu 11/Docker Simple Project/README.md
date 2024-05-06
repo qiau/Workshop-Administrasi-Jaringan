@@ -10,12 +10,17 @@
 ## - CLONE PROJECT
 
 - Lakukan git clone dari project docker-example: 
-  - `git clone https://github.com/alfiyansys/docker-examples.git`:
+  - `git clone https://github.com/alfiyansys/docker-examples.git`
   
-## - INSTALL DENGAN REPOSITORI APT
+## - BUAT IMAGE DOCKER
 
+- Masuk ke direktori docker-example:
+  - `cd docker-examples`
 
-  ![](assets/docktest1.png)
+- Membuat sebuah image Docker dari sebuah Dockerfile yang ada di direktori saat ini :
+  - `cd docker-examples`
+
+  ![](assets/docktest-1.png)
 
 ## - INSTALL DENGAN REPOSITORI APT
 
@@ -33,7 +38,7 @@
       ![](assets/docktest2.png)
   - `sudo apt-get update`:
     
-      ![](assets/dockera.png)
+      ![](assets/docktest3.png)
   
 ## - INSTALL PAKET DOCKER
 
