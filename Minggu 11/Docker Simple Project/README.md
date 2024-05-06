@@ -7,11 +7,15 @@
 
 - # _DOCKER SIMPLE PROJECT_
 
-## - MENGHAPUS VERSI LAMA (Jika sebelumnya pernah memasang)
+## - CLONE PROJECT
 
-- Ketik `for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done`:
+- Lakukan git clone dari project docker-example: 
+  - `git clone https://github.com/alfiyansys/docker-examples.git`:
   
-  ![](assets/docker1.png)
+## - INSTALL DENGAN REPOSITORI APT
+
+
+  ![](assets/docktest1.png)
 
 ## - INSTALL DENGAN REPOSITORI APT
 
@@ -26,7 +30,7 @@
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`:
 
-      ![](assets/docker2.png)
+      ![](assets/docktest2.png)
   - `sudo apt-get update`:
     
       ![](assets/dockera.png)
