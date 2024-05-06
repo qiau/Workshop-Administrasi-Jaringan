@@ -7,9 +7,10 @@
 
 - # _INSTALL DOCKER ENGINE DEBIAN 12_
 
-## - MENGHAPUS VERSI LAMA
+## - MENGHAPUS VERSI LAMA (Jika sebelumnya pernah memasang)
 
 - Ketik `for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done`:
+  
   ![](assets/docker1.png)
 
 ## - INSTALL DENGAN REPOSITORI APT
@@ -24,64 +25,27 @@
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`:
-  ![](assets/docker2.png)
+
+      ![](assets/docker2.png)
   - `sudo apt-get update`:
-  ![](assets/docker3.png)
+    
+      ![](assets/dockera.png)
   
-## - MENGGUNAKAN ROUNDCUBE
+## - INSTALL PAKET DOCKER
 
-1. Lakukan instalasi roundcube dengan perintah
-   ```bash
-   sudo apt install roundcube
-   ```
-![](assets/rc1.png)
+- Untuk memasang paket versi terbaru gunakan perintah ini:
+  - `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`:
+    
+      ![](assets/docker3.png)
+    
+- Cek versi Docker:
+  - `docker --version`:
+    
+      ![](assets/dockerb.png)
 
-![](assets/rc2.png)
+## - VERIFIKASI
 
-![](assets/rc3.png)
-
-2. Lalu kita buat MariaDB database dan user untuk roundcubenya
-
-![](assets/rc4.png)
-
-3. Lalu konfigurasi config.inc.php di roundcube.
-
-![](assets/rc5.png)
-
-4. Konfigurasi apache.conf.
-
-![](assets/rc6.png)
-
-5. Konfigurasi 000-default.conf.
-
-![](assets/rc7.png)
-
-6. Lalu kita rekonfigurasi dengan perintah
-   ```bash
-   sudo dpkg-reconfigure roundcube-core
-   ```
-![](assets/rc8.png)
-
-![](assets/rc9.png)
-
-![](assets/rc10.png)
-
-![](assets/rc11.png)
-
-![](assets/rc12.png)
-
-![](assets/rc13.png)
-
-![](assets/rc14.png)
-
-![](assets/rc15.png)
-
-![](assets/rc16.png)
-
-![](assets/rc17.png)
-
-![](assets/rc18.png)
-
-![](assets/rc19.png)
-
-![](assets/rc20.png)
+- Untuk memverifikasi bahwa penginstalan berhasil gunakan perintah:
+  - `sudo docker run hello-world`:
+    
+      ![](assets/dockerc.png)
