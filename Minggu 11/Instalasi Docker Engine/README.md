@@ -26,7 +26,7 @@
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`:
   ![](assets/docker2.png)
   - `sudo apt-get update`:
-  ![](assets/docker2.png)
+  ![](assets/docker3.png)
   
 ## - MENGGUNAKAN ROUNDCUBE
 
