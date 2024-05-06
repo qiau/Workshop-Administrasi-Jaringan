@@ -20,7 +20,7 @@
 - Membuat sebuah image Docker dari sebuah Dockerfile yang ada di direktori saat ini :
   - `sudo docker build -t example .`
 
-  ![](assets/docktest-1.png)
+      ![](assets/docktest-1.png)
 
 ## - MENJALANKAN DOCKER
 
