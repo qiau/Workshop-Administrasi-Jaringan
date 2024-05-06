@@ -18,43 +18,18 @@
   - `cd docker-examples`
 
 - Membuat sebuah image Docker dari sebuah Dockerfile yang ada di direktori saat ini :
-  - `cd docker-examples`
+  - `sudo docker build -t example .`
 
   ![](assets/docktest-1.png)
 
-## - INSTALL DENGAN REPOSITORI APT
+## - MENJALANKAN DOCKER
 
-- Masukkan command berikut ini:
-  - `sudo apt-get update`:
-  - `sudo apt-get install ca-certificates curl`:
-  - `sudo install -m 0755 -d /etc/apt/keyrings`:
-  - `sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc`:
-  - `sudo chmod a+r /etc/apt/keyrings/docker.asc`:
-  - `echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
-  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`:
+- Jalankan sebuah container Docker dari sebuah image yang sudah ada:
+  - `sudo docker run -p 3000:80 example`
 
       ![](assets/docktest2.png)
-  - `sudo apt-get update`:
+    
+- Jalankan pada firefox dengan mengetikkan:
+  - `localhost:3000`
     
       ![](assets/docktest3.png)
-  
-## - INSTALL PAKET DOCKER
-
-- Untuk memasang paket versi terbaru gunakan perintah ini:
-  - `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`:
-    
-      ![](assets/docker3.png)
-    
-- Cek versi Docker:
-  - `docker --version`:
-    
-      ![](assets/dockerb.png)
-
-## - VERIFIKASI
-
-- Untuk memverifikasi bahwa penginstalan berhasil gunakan perintah:
-  - `sudo docker run hello-world`:
-    
-      ![](assets/dockerc.png)
