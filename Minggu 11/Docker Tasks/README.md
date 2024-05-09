@@ -14,12 +14,16 @@
 - Membuat file yml dengan perintah `touch docker-compose.yml`
 - Mengedit isi dari file yml dengan perintah `sudo nano docker-compose.yml` dengan isi sebagai berikut : 
     ![Kuma yml](assets/yamlFile.png)
+  
 - Install Docker uptime kuma dengan perintah `sudo docker run -d --restart=always -p 3001:3001 -v uptime-kuma:/app/data --id uptime-kuma louislam/uptime-kuma:1`
-- ![Kuma install](assets/installKuma.jpg)
+    ![Kuma install](assets/installKuma.jpg)
+  
 - Menjalankan perintah `docker ps` untuk memeriksa apakah suatu container sedang berjalan
 ![Docker ps](assets/dockerPs.jpg)
+
 - Menjalankan perintah `sudo docker logs uptime-kuma` untuk mengecek log dari container uptime-kuma
 ![Log kuma](assets/logsKuma.jpg)
+
 - Jika berhasil, coba jalankan di firefox dengan mengetikkan `localhost:3001` dan akan muncul tampilan berikut
 ![Kuma landing page](assets/kumaLanding.jpg)
 
