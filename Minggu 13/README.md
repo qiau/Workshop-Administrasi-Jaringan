@@ -7,8 +7,62 @@
 
 - # _DOCKER 101_
 
-## - MENGGUNAKAN TELNET
+## - GETTING STARTED
 
+1. Setelah masuk ke labs buat instance baru.
+2. Setelah terminal muncul masukkan kode berikut untuk membuka port 80 yang berisi tutorial.
+   ```bash
+   docker run -dp 80:80 docker/getting-started:pwd
+   ```
+![](assets/1.png)
+
+## - OUR APPLICATION
+
+1. Download file app.zip pada laman tutorial.
+2. Ekstrak file tersebut dengan mengetikkan kode berikut pada terminal.
+   ```bash
+   unzip app.zip
+   ```
+   ![](assets/5.png)
+
+3. Pindah ke direktori app dengan perintah.
+   ```bash
+   cd app/
+   ```
+4. Lihat isi dari direktori dengan perintah
+   ```bash
+   ls
+   ```
+5. Buat dan isi file bernama Dockerfile dengan perintah.
+   ```bash
+   touch Dockerfile
+   vi Dockerfile
+   ```
+![](assets/6.png)
+
+6. Tambahkan kode berikut ke dalam file.
+   ```bash
+    FROM node:10-alpine
+    WORKDIR /app
+    COPY . .
+    RUN yarn install --production
+    CMD ["node", "/app/src/index.js"]
+   ```
+   ![](assets/7.png)
+
+7. Buat Container Image dengan perintah.
+   ```bash
+   docker build -t docker-101 .
+   ```
+   ![](assets/8.png)
+
+8. Memulai kontainer dengan perintah.
+   ```bash
+   docker run -dp 3000:3000 docker-101
+   ```
+   ![](assets/9.png)
+8. 
+9. 
 - Melakukan pengiriman pesan
   ketik `telnet mail.kelompok4.local 25` lalu masukkan sintaks berikut:
   - `HELO` untuk memulai sesi Telnet dengan server
