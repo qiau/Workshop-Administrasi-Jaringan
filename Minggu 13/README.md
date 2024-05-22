@@ -99,12 +99,12 @@
    ![](assets/13.png)
 
 6. Tekan port 3000 yang baru dan hasilnya seperti berikut.
-   ![](assets/x.png)
+   ![](assets/29.png)
 
 ## - SHARING OUR APP
 
 1. Login terlebih dahulu ke Docker Hub dan buat repository baru bernama '101-todo-app' dengan visibilitas public.
-   ![](assets/y.png)
+   ![](assets/28.png)
 
 2. Push ke repo dengan perintah.
    ```bash
@@ -134,10 +134,10 @@
    ```bash
    docker run -dp 3000:3000 YOUR-USER-NAME/101-todo-app
    ```
-   ![](assets/z.png)
+   ![](assets/30.png)
    
 7. Buka port 3000 dan hasilnya seperti berikut.
-   ![](assets/z.png)
+   ![](assets/29.png)
 
 ## - PERSISTING OUR DB
 
@@ -170,4 +170,17 @@
    ```bash
    docker run -dp 3000:3000 -v todo-db:/etc/todos docker-101
    ```
+
+6. Tekan port 3000 dan coba masukkan beberapa data.
+
+   ![](assets/31.png)
+
+7. Hapus port 3000 dan coba mulai ulang seperti kode nomor 5.
+
    ![](assets/26.png)
+
+8. Buka lagi dan hasilnya bisa dilihat data masih tersimpan.
+
+   ![](assets/31.png)
+
+   
