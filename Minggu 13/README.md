@@ -61,94 +61,113 @@
    docker run -dp 3000:3000 docker-101
    ```
    ![](assets/9.png)
-8. 
-9. 
-- Melakukan pengiriman pesan
-  ketik `telnet mail.kelompok4.local 25` lalu masukkan sintaks berikut:
-  - `HELO` untuk memulai sesi Telnet dengan server
-  - `MAIL FROM:` untuk mendefinisikan alamat email pengirim
-  - `RCPT TO:` untuk mendefinisikan alamat email penerima
-  - `DATA` untuk memasukkan isi dari email yang dikirim
-  
-  ![kirim email](assets/kirim%20email.png)
-  >Jika muncul output tersebut, maka email berhasil dikirim ke alamat tujuan
+   
+9. Tekan port 3000 dan hasil akan seperti berikut.
+   ![](assets/27.png)
 
-- Pengecekan pesan yang masuk
-  ketik `telnet mail.kelompok4.local 110` lalu masukkan sintaks berikut:
-  - `user` untuk memasukkan username dari user
-  - `pass:` untuk memasukkan password dari user
-  - `list:` untuk melihat list dari email yang diterima
-  - `RETR {index}` untuk melihat isi pesan dari index tertentu
-  
-  ![terima email](assets/accept%20email.png)
-  
-## - MENGGUNAKAN DEBIAN EVOLUTION
+## - UPDATING OUR APP
 
-- Melakukan pengiriman pesan
-  - Masukkan email pengirim
-  - Masukkan email pengirim
-  - Masukkan pesan yang akan dikirim
-  
-  ![mail send](assets/evol%20send%20email.png)
-
-  Jika berhasil, maka akan muncul seperti gambar berikut: 
-
-  ![mail success](assets/evol%20success.png)
-  
-## - MENGGUNAKAN ROUNDCUBE
-
-1. Lakukan instalasi roundcube dengan perintah
+1. Edit code pada file app.js dengan perintah berikut.
    ```bash
-   sudo apt install roundcube
+   vi ~/app/src/static/js/app.js
    ```
-![](assets/rc1.png)
 
-![](assets/rc2.png)
-
-![](assets/rc3.png)
-
-2. Lalu kita buat MariaDB database dan user untuk roundcubenya
-
-![](assets/rc4.png)
-
-3. Lalu konfigurasi config.inc.php di roundcube.
-
-![](assets/rc5.png)
-
-4. Konfigurasi apache.conf.
-
-![](assets/rc6.png)
-
-5. Konfigurasi 000-default.conf.
-
-![](assets/rc7.png)
-
-6. Lalu kita rekonfigurasi dengan perintah
+2. Hapus code pada line 56 dan ganti dengan.
    ```bash
-   sudo dpkg-reconfigure roundcube-core
+    <p className="text-center">You have no todo items yet! Add one above!</p>
    ```
-![](assets/rc8.png)
+   ![](assets/10.png)
 
-![](assets/rc9.png)
+3. Update image dengan perintah.
+   ```bash
+    docker build -t docker-101 .
+   ```
+   ![](assets/11.png)
 
-![](assets/rc10.png)
+4. Jalankan container baru dengan perintah.
+   ```bash
+    docker run -dp 3000:3000 docker-101
+   ```
+   ![](assets/12.png)
+   
+5. Terdapat error karena port 3000 masih dipakai, jadi perlu menghapus port lama dan memulainya kembali.
+   ```bash
+   docker ps
+   docker stop <the-container-id>
+   docker rm <the-container-id>
+   ```
+   ![](assets/13.png)
 
-![](assets/rc11.png)
+6. Tekan port 3000 yang baru dan hasilnya seperti berikut.
+   ![](assets/x.png)
 
-![](assets/rc12.png)
+## - SHARING OUR APP
 
-![](assets/rc13.png)
+1. Login terlebih dahulu ke Docker Hub dan buat repository baru bernama '101-todo-app' dengan visibilitas public.
+   ![](assets/y.png)
 
-![](assets/rc14.png)
+2. Push ke repo dengan perintah.
+   ```bash
+   docker push dockersamples/101-todo-app
+   ```
+   ![](assets/15.png)
+   
+3. Terjadi error karena nama 'dockersamples' tidak sesuai sehingga perlu dilakukan login terlebih dahulu.
+   ```bash
+   docker login -u YOUR-USER-NAME
+   ```
+   ![](assets/16.png)
 
-![](assets/rc15.png)
+4. Setelah login kita lakukan kembali dengan memberikan tag.
+   ```bash
+   docker tag docker-101 YOUR-USER-NAME/101-todo-app
+   ```
+   ![](assets/17.png)
 
-![](assets/rc16.png)
+5. Coba push kembali dengan perintah.
+   ```bash
+   docker push YOUR-USER-NAME/101-todo-app
+   ```
+   ![](assets/18.png)
 
-![](assets/rc17.png)
+6. Buat instance baru dan jalankan kode berikut.
+   ```bash
+   docker run -dp 3000:3000 YOUR-USER-NAME/101-todo-app
+   ```
+   ![](assets/z.png)
+   
+7. Buka port 3000 dan hasilnya seperti berikut.
+   ![](assets/z.png)
 
-![](assets/rc18.png)
+## - PERSISTING OUR DB
 
-![](assets/rc19.png)
+1. Mulai kontainer ubuntu dengan perintah.
+   ```bash
+   docker run -d ubuntu bash -c "shuf -i 1-10000 -n 1 -o /data.txt && tail -f /dev/null"
+   ```
+   ![](assets/22.png)
 
-![](assets/rc20.png)
+2. Untuk mengecek isi file data.txt kita perlu jalankan perintah berikut.
+   ```bash
+   docker ps
+   docker exec <container-id> cat /data.txt
+   ```
+   ![](assets/23.png)
+   
+3. Kita cek apakah file data.txt ada didalam ubuntu dengan.
+   ```bash
+   docker run -it ubuntu ls /
+   ```
+   ![](assets/24.png)
+
+4. Buat volume baru dengan nama todo-db.
+   ```bash
+   docker volume create todo-db
+   ```
+   ![](assets/25.png)
+
+5. Jalankan kontainer todo dengan port 3000.
+   ```bash
+   docker run -dp 3000:3000 -v todo-db:/etc/todos docker-101
+   ```
+   ![](assets/26.png)
