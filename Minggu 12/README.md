@@ -19,16 +19,16 @@
    ```bash
    bash hst-install.sh
    ```
-![](assets/1.png)
+![](assets/h1.png)
 
 5. Lalu masukkan email & FQDN hostname seperti gambar berikut.
-   ![](assets/2.png)
+   ![](assets/h2.png)
 
 6. Setelah itu tunggu proses selama kurang lebih 10 - 15 menit.
-   ![](assets/1.png)
+   ![](assets/h3.png)
    
 7. Setelah berhasil terinstall akan diberikan URL, username, dan password untuk login ke control panel.
-   ![](assets/1.png)
+   ![](assets/h4.png)
 
 ## - AKSES CONTROL PANEL
 
@@ -38,7 +38,7 @@
    ```
 
 2. Lalu login dengan username dan password yang telah diberikan sebelumnya.
-   ![](assets/5.png)
+   ![](assets/h5.png)
 
 3. Setelah berhasil login, tampilan control panelnya seperti berikut.
-   ![](assets/5.png)
+   ![](assets/h6.png)
