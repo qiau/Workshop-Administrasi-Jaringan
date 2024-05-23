@@ -22,7 +22,7 @@
 ![](assets/1.png)
 
 5. Lalu masukkan email & FQDN hostname seperti gambar berikut.
-   ![](assets/1.png)
+   ![](assets/2.png)
 
 6. Setelah itu tunggu proses selama kurang lebih 10 - 15 menit.
    ![](assets/1.png)
