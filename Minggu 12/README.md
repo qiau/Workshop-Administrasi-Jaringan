@@ -28,7 +28,7 @@
    ![](assets/h3.png)
    
 7. Setelah berhasil terinstall akan diberikan URL, username, dan password untuk login ke control panel.
-   ![](assets/4.png)
+   ![](assets/5.png)
 
 ## - AKSES CONTROL PANEL
 
@@ -38,7 +38,8 @@
    ```
 
 2. Lalu login dengan username dan password yang telah diberikan sebelumnya.
-   ![](assets/5.png)
-
-3. Setelah berhasil login, tampilan control panelnya seperti berikut.
    ![](assets/6.png)
+   ![](assets/7.png)
+
+4. Setelah berhasil login, tampilan control panelnya seperti berikut.
+   ![](assets/8.png)
