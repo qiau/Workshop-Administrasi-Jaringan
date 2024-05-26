@@ -160,27 +160,77 @@
    ```
    ![](assets/24.png)
 
-4. Buat volume baru dengan nama todo-db.
+4. hapus container ubuntu pertama kita tadi dengan.
+   ```bash
+   docker rm -f <container-id>
+   ```
+   ![](assets/pg1.png)
+
+5. Buat volume baru dengan nama todo-db.
    ```bash
    docker volume create todo-db
    ```
    ![](assets/25.png)
 
-5. Jalankan kontainer todo dengan port 3000.
+6. Jalankan kontainer todo dengan port 3000.
    ```bash
    docker run -dp 3000:3000 -v todo-db:/etc/todos docker-101
    ```
 
-6. Tekan port 3000 dan coba masukkan beberapa data.
+7. Tekan port 3000 dan coba masukkan beberapa data.
 
    ![](assets/31.png)
 
-7. Hapus port 3000 dan coba mulai ulang seperti kode nomor 5.
+8. Hapus port 3000 dan coba mulai ulang seperti kode nomor 5.
 
    ![](assets/26.png)
 
-8. Buka lagi dan hasilnya bisa dilihat data masih tersimpan.
+9. Buka lagi dan hasilnya bisa dilihat data masih tersimpan.
 
    ![](assets/31.png)
 
-   
+10. Jika ingin mengetahui di mana Docker menyimpan data kita jika menggunakan named volume, kita bisa menggunakan.
+    ```bash
+    docker volume inspect <name>
+    ```
+    ![](assets/pg2.png)
+
+## - Using Bind Mounts
+
+1. Pastikan bahwa kita tidak mempunyai container docker-101 yang masih berjalan.
+   ```bash
+   docker run -d ubuntu bash -c "shuf -i 1-10000 -n 1 -o /data.txt && tail -f /dev/null"
+   ```
+   ![](assets/40.png)
+
+2. Jalankan command berikut.
+   ```bash
+   docker run -dp 3000:3000 \
+    -w /app -v $PWD:/app \
+    node:10-alpine \
+    sh -c "yarn install && yarn run dev"
+   ```
+   ![](assets/41.png)
+
+3. Jalankan perintah berikut, dan jika bisa Listening on port 3000 maka sudah bisa digunakan.
+   ```bash
+   docker logs -f <container-id>,
+   ```
+   ![](assets/42.png)
+
+4. Kita ubah tombol "Add Item" menjadi "Add" di.
+   ```bash
+   src/static/js/app.js
+   ```
+   ![](assets/43.png)
+
+5. Jalankan port 3000 dan kita bisa melihat bahwa tombol sudah berubah menjadi "Add".
+
+   ![](assets/44.png)
+
+6. Kita bisa bebas membuat perubahan sesuka kita. Jika sudah selesai, stop containernya dan build imagenya dengan docker build -t docker-101.
+   ```bash
+   docker build -t docker-101 .
+   ```
+
+## - Multi-Container Apps
