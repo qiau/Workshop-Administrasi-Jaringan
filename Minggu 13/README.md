@@ -195,42 +195,112 @@
     ```
     ![](assets/pg2.png)
 
-## - Using Bind Mounts
+## - USING BIND MOUNTS
 
 1. Pastikan bahwa kita tidak mempunyai container docker-101 yang masih berjalan.
-   ```bash
-   docker run -d ubuntu bash -c "shuf -i 1-10000 -n 1 -o /data.txt && tail -f /dev/null"
-   ```
+
    ![](assets/40.png)
 
 2. Jalankan command berikut.
    ```bash
    docker run -dp 3000:3000 \
-    -w /app -v $PWD:/app \
-    node:10-alpine \
-    sh -c "yarn install && yarn run dev"
+        -w /app -v $PWD:/app \
+        node:10-alpine \
+        sh -c "yarn install && yarn run dev"
    ```
-   ![](assets/41.png)
 
 3. Jalankan perintah berikut, dan jika bisa Listening on port 3000 maka sudah bisa digunakan.
    ```bash
-   docker logs -f <container-id>,
+   docker logs -f <container-id>
    ```
-   ![](assets/42.png)
+   ![](assets/41.png)
 
 4. Kita ubah tombol "Add Item" menjadi "Add" di.
    ```bash
    src/static/js/app.js
    ```
-   ![](assets/43.png)
+   ![](assets/42.png)
 
 5. Jalankan port 3000 dan kita bisa melihat bahwa tombol sudah berubah menjadi "Add".
 
-   ![](assets/44.png)
+   ![](assets/43.png)
 
-6. Kita bisa bebas membuat perubahan sesuka kita. Jika sudah selesai, stop containernya dan build imagenya dengan docker build -t docker-101.
+6. Kita bisa bebas membuat perubahan sesuka kita. Jika sudah selesai, stop containernya dan build imagenya dengan.
    ```bash
    docker build -t docker-101 .
    ```
 
-## - Multi-Container Apps
+## - MULTI-CONTAINER APPS
+
+1. Buat networknya dengan.
+   ```bash
+   docker network create todo-app
+   ```
+   ![](assets/44.png)
+   
+2. Jalankan MySQL container dan attach ke network. Jalankan command.
+   ```bash
+   docker run -d \
+        --network todo-app --network-alias mysql \
+        -v todo-mysql-data:/var/lib/mysql \
+        -e MYSQL_ROOT_PASSWORD=secret \
+        -e MYSQL_DATABASE=todos \
+        mysql:5.7
+   ```
+   ![](assets/45.png)
+
+3. Jalankan kode berikut untuk mengonfirmasi bahwa database kita sudah berjalan.
+   ```bash
+   docker exec -it <mysql-container-id> mysql -p
+   ```
+   ![](assets/46.png)
+
+4. Cek database yang tersedia dengan menjalankan.
+   ```bash
+   SHOW DATABASES;
+   ```
+   ![](assets/47.png)
+
+5. Jalankan container baru dengan.
+   ```bash
+   docker run -it --network todo-app nicolaka/netshoot
+   ```
+
+6. Jalankan perintah berikut untuk mendapatkan IP address.
+   ```bash
+   dig mysql 
+   ```
+   ![](assets/48.png)
+
+7. Jalankan command berikut untuk specify environment variables dan connect ke container.
+   ```bash
+   docker run -dp 3000:3000 \
+      -w /app -v $PWD:/app \
+      --network todo-app \
+      -e MYSQL_HOST=mysql \
+      -e MYSQL_USER=root \
+      -e MYSQL_PASSWORD=secret \
+      -e MYSQL_DB=todos \
+      node:10-alpine \
+      sh -c "yarn install && yarn run dev"
+   ```
+   ![](assets/49.png)
+
+8. Kita cek lognya dengan perintah berikut dan nanti akan ada pesan yang memberitahu bahwa sedang menggunakan database mysql.
+   ```bash
+   docker logs <container-id>
+   ```
+   ![](assets/50.png)
+
+9. Buka web to-do-listnya di port 3000 dan tambahkan beberapa item.
+
+   ![](assets/51.png)
+   
+10. Lalu connect ke mysql databasenya dengan docker exec. Lalu jalankan perintah select. Terlihat bahwa aplikasi kita berhasil connect ke database mysql.
+    ```bash
+    docker exec -ti <mysql-container-id> mysql -p todos
+    select * from todo_items;
+    ```
+    ![](assets/52.png)
+
+## - USING DOCKER COMPOSE
