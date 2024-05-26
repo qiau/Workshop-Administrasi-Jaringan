@@ -304,3 +304,92 @@
     ![](assets/52.png)
 
 ## - USING DOCKER COMPOSE
+
+1. Karena kita menggunakan Play-with-Docker instance, maka Docker Compose sudah ter-install. Kita cek versinya dengan perintah.
+   ```bash
+   docker-compose version
+   ```
+   ![](assets/53.png)
+
+2. Di folder app, buat file bernama docker-compose.yml.
+
+3. Lalu isi filenya seperti berikut ini.
+
+   ![](assets/54.png)
+
+4. Pertama, mari kita definisikan service entry dan image untuk container. Kita bisa memilih nama apa saja untuk service tersebut. Nama ini secara otomatis akan menjadi alias jaringan, yang akan berguna saat mendefinisikan service MySQL kita.
+
+Biasanya, perintah ditempatkan dekat dengan definisi image, meskipun tidak ada persyaratan khusus untuk urutannya. Jadi, mari kita pindahkan itu ke dalam file kita.
+
+Mari kita migrasi bagian -p 3000:3000 dengan mendefinisikan ports untuk service.
+
+Selanjutnya, kita akan migrasi direktori (-w /app) dan mapping volume (-v $PWD:/app) menggunakan definisi working_dir dan volumes.
+
+Salah satu keuntungan dari volume Docker Compose adalah kita bisa menggunakan jalur relatif dari direktori saat ini.
+
+Terakhir, kita perlu migrasi definisi environment variables menggunakan key environment.
+
+File docker-compose.yml akan menjadi seperti ini.
+   ![](assets/55.png)
+
+5. Pertama, kita akan mendefinisikan layanan baru dan menamainya mysql sehingga secara otomatis mendapatkan alias jaringan. Kita juga akan menentukan image yang akan digunakan.
+
+Selanjutnya, kita akan mendefinisikan pemetaan volume. Saat kita menjalankan container dengan docker run, volume bernama dibuat secara otomatis. Namun, itu tidak terjadi saat menjalankan dengan Compose. Kita perlu mendefinisikan volume di bagian top-level volumes: dan kemudian menentukan mountpoint dalam konfigurasi layanan. Dengan hanya menyediakan nama volume, opsi default akan digunakan. Namun, tersedia banyak opsi lain.
+
+Terakhir, kita hanya perlu menentukan environment variables.
+
+File docker-compose.yml akan menjadi seperti ini.
+   ![](assets/56.png)
+
+6. File docker-compose.yml sudah siap digunakan.
+
+   ![](assets/57.png)
+
+7. Jalankan perintah.
+   ```bash
+   docker-compose up -d
+   ```
+   ![](assets/58.png)
+
+8. Mari kita lihat log menggunakan perintah docker-compose logs -f. Kita akan melihat log dari masing-masing layanan terjalin menjadi satu stream. Ini sangat berguna saat kita ingin memantau masalah terkait waktu. Flag -f "mengikuti" log, sehingga memberikan output langsung saat log dihasilkan.
+
+   ![](assets/59.png)
+
+9. Lalu kita harusnya sudah bisa membuka aplikasi to-do-listnya lagi.
+
+   ![](assets/60.png)
+
+10. Jika ingin menghentikan docker compose, gunakan perintah.
+    ```bash
+    command docker-compose down
+    ```
+
+## - IMAGE BUILDING BEST PRACTICES
+
+1. Gunakan docker image history untuk melihat layer-layer di image docker-101. Setiap baris mewakili sebuah layer dalam image. Tampilan di sini menunjukkan layer dasar di bagian bawah dengan layer terbaru di bagian atas. Dengan ini, kita juga dapat dengan cepat melihat ukuran setiap layer, membantu mendiagnosis image yang besar.
+
+   ![](assets/61.png)
+
+2. Jalankan perintah berikut. Kita akan melihat bahwa beberapa baris terpotong. Jika kita menambahkan flag --no-trunc, kita akan mendapatkan output lengkap.
+   ```bash
+   docker image history --no-trunc docker-101
+   ```
+   ![](assets/62.png)
+
+3. Ubah Dockerfile menjadi seperti berikut.
+   
+   ![](assets/63.png)
+
+4. Build image baru dengan perintah.
+   ```bash
+   docker build -t docker-101 .
+   ```
+
+5. Ubah title di src/static/index.html menjadi "The Awesome Todo App".
+   
+   ![](assets/64.png)
+
+6. Build lagi imagenya dengan perintah berikut. Buildnya akan menjadi lebih cepat karena menggunakan cache.
+   ```bash
+   docker build -t docker-101 .
+   ```
