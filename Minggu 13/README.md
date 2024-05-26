@@ -330,6 +330,7 @@ Salah satu keuntungan dari volume Docker Compose adalah kita bisa menggunakan ja
 Terakhir, kita perlu migrasi definisi environment variables menggunakan key environment.
 
 File docker-compose.yml akan menjadi seperti ini.
+   
    ![](assets/55.png)
 
 5. Pertama, kita akan mendefinisikan layanan baru dan menamainya mysql sehingga secara otomatis mendapatkan alias jaringan. Kita juga akan menentukan image yang akan digunakan.
@@ -339,6 +340,7 @@ Selanjutnya, kita akan mendefinisikan pemetaan volume. Saat kita menjalankan con
 Terakhir, kita hanya perlu menentukan environment variables.
 
 File docker-compose.yml akan menjadi seperti ini.
+   
    ![](assets/56.png)
 
 6. File docker-compose.yml sudah siap digunakan.
@@ -361,7 +363,7 @@ File docker-compose.yml akan menjadi seperti ini.
 
 10. Jika ingin menghentikan docker compose, gunakan perintah.
     ```bash
-    command docker-compose down
+    docker-compose down
     ```
 
 ## - IMAGE BUILDING BEST PRACTICES
