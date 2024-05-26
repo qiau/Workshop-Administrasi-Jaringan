@@ -30,11 +30,13 @@
 7. Setelah berhasil terinstall akan diberikan URL, username, dan password untuk login ke control panel.
    ![](assets/5.png)
 
+8. Catatlah url hingga password, lalu tekan sembarang tombol untuk reboot sistem.
+
 ## - AKSES CONTROL PANEL
 
-1. Salin url berikut ke browser.
+1. Salin url yang telah diberikan tadi ke browser.
    ```bash
-   unzip app.zip
+   https://hestiacp.kelompok7.local:8083
    ```
 
 2. Lalu login dengan username dan password yang telah diberikan sebelumnya.
